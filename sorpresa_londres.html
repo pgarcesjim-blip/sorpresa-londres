@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tu próximo destino ✈️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef0ff,#f9f7ff);color:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:min(430px,100%);background:white;border-radius:28px;box-shadow:0 18px 60px #0002;overflow:hidden}
+.top{background:#1824a8;color:white;padding:28px 24px 22px;text-align:center}
+.small{font-size:12px;letter-spacing:2px;opacity:.8}
+h1{font-size:34px;margin:10px 0 4px}
+.content{padding:28px 24px 30px;text-align:center}
+.hidden{display:none}
+button{border:0;border-radius:999px;background:#ffd600;color:#111;font-weight:800;font-size:17px;padding:15px 26px;cursor:pointer;box-shadow:0 7px 18px #0002}
+.route{display:flex;align-items:center;justify-content:space-between;margin:24px 0}
+.air{font-size:32px}
+.code{font-size:36px;font-weight:900}
+.city{font-size:13px;color:#666;margin-top:3px}
+.line{height:2px;background:#1824a8;flex:1;margin:0 12px;position:relative}
+.line:after{content:"✈";position:absolute;left:50%;top:-16px;transform:translateX(-50%);font-size:24px}
+.names{background:#f3f4ff;border-radius:18px;padding:16px;margin:18px 0;text-align:left}
+.names b{display:block;margin:6px 0}
+.badge{display:inline-block;background:#1824a8;color:white;padding:8px 13px;border-radius:99px;font-size:12px;font-weight:700}
+.big{font-size:29px;font-weight:900;line-height:1.05;margin:18px 0 12px}
+.note{color:#555;line-height:1.55}
+.heart{font-size:44px;margin:8px}
+.footer{font-size:12px;color:#888;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="small">UNA NUEVA AVENTURA TE ESPERA</div>
+    <h1>✈️ ¿LISTA, SANDRA?</h1>
+    <div>Hay algo que tienes que descubrir...</div>
+  </div>
+
+  <section class="content" id="inicio">
+    <div class="heart">🎁</div>
+    <p class="note">He preparado una pequeña sorpresa para ti.<br>Pero tendrás que abrirla.</p>
+    <button onclick="mostrar('vuelo')">DESCUBRIR ✈️</button>
+    <div class="footer">Pulsa el botón</div>
+  </section>
+
+  <section class="content hidden" id="vuelo">
+    <span class="badge">NUEVA RESERVA</span>
+    <div class="route">
+      <div><div class="code">BCN</div><div class="city">BARCELONA 🇪🇸</div></div>
+      <div class="line"></div>
+      <div><div class="code">LDN</div><div class="city">LONDRES 🇬🇧</div></div>
+    </div>
+
+    <div class="names">
+      <div class="small" style="color:#777">PASAJEROS</div>
+      <b>SANDRA RUIZ NUÑO</b>
+      <b>PABLO GARCES JIMENEZ</b>
+      <div style="margin-top:12px"><span class="badge">ASIENTOS 1A · 1B</span></div>
+    </div>
+
+    <button onclick="mostrar('final')">¿Y AHORA QUÉ? ❤️</button>
+  </section>
+
+  <section class="content hidden" id="final">
+    <div class="heart">🇬🇧❤️</div>
+    <div class="big">NOS VAMOS A LONDRES</div>
+    <p class="note">
+      <b>PRIMAVERA 2027</b><br><br>
+      La fecha todavía está por decidir porque primero tenemos que mirar tus clases y exámenes.
+    </p>
+    <div class="names">
+      <div class="big" style="font-size:22px">PERO HAY ALGO QUE YA ESTÁ DECIDIDO:</div>
+      <p class="note"><b>✈️ LOS DOS VUELOS SON MI REGALO PARA TI.</b></p>
+    </div>
+    <p class="note">
+      Después de 3 años contigo, no quiero que nuestro
+      <i>«algún día iremos»</i> se quede en un algún día.
+    </p>
+    <div class="big" style="font-size:24px">ESTA VEZ, NOS VAMOS DE VERDAD. ❤️</div>
+    <div class="footer">Feliz 3.º aniversario · 15.09.2026</div>
+  </section>
+</div>
+
+<script>
+function mostrar(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
